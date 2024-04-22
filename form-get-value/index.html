@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="confirm.php" method="post">
+      <input type="text" name="f_name" placeholder="姓" />
+      <input type="text" name="l_name" placeholder="名" />
+      <br />
+      <select name="age" id="">
+        <option value="">年齢を選択してください</option>
+        <option value="1">10代</option>
+        <option value="2">20代</option>
+        <option value="3">30代</option>
+        <option value="4">40代</option>
+      </select>
+      <br />
+      <label>
+        性別
+        <input type="radio" value="1" name="gender" />男性
+        <input type="radio" value="2" name="gender" />女性
+      </label>
+      <br />
+      <button type="submit">送信</button>
+    </form>
+  </body>
+</html>
