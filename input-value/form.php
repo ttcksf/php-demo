@@ -32,12 +32,12 @@
 <form action="form.php" method="POST">
 <label for="">
     氏名
-    <input type="text" name="name" value="<?php echo $name;?>">
+    <input type="text" name="name" value="<?php echo htmlspecialchars($name);?>">
     <div style="color: red;"><?php echo $errors["name"];?></div>
   </label>
   <label for="">
     Email
-    <input type="text" name="email" value="<?php echo $email;?>">
+    <input type="text" name="email" value="<?php echo htmlspecialchars($email);?>">
     <div style="color: red;"><?php echo $errors["email"];?></div>
   </label>
   <input type="submit" name="submit" value="送信">
