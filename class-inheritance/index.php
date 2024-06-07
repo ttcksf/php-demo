@@ -24,12 +24,15 @@
     }
 
   }
-
+  
+  $user = new User("yamada","yamada@test.com");
   // $admin = new AdminUser("suzuki","suzuki@test.com");
-  $admin = new AdminUser("suzuki","suzuki@test.com", 1);
   // 引き継いだプロパティ、メソッドは設計を新たに書かなくても使用できる
-  echo $admin->test() . "<br>";
-  echo $admin->role;
+  // echo $user->email . "<br>";
+  // echo $admin->email . "<br>";
+  $admin = new AdminUser("suzuki","suzuki@test.com", 1);
+  // 新しく作成するものがあるとparent::__constructがないとコンストラクターが上書きされてしまうので注意
+  echo $admin->role . "<br>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
