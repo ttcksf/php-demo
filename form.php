@@ -1,4 +1,5 @@
 <?php
+  include("./db_connect.php");
   $name = "";
   $email = "";
   $errors = [
@@ -22,7 +23,19 @@
       $errors["name"] = "名前を入力してください";
     }else{
       print_r(htmlspecialchars($name));
-    } 
+    }
+    if(array_filter($errors)){
+      echo "入力内容を修正してください";
+    }else{
+      $name = mysqli_real_escape_string($conn, $name);
+      $email = mysqli_real_escape_string($conn, $email);
+      $sql = "INSERT INTO users(name,email) VALUES('$name','$email')";
+      if(mysqli_query($conn, $sql)){
+        header("Location: index.php");
+      }else{
+        echo "クエリエラー：" . mysqli_error($conn);
+      }
+    }
   }
 ?>
 
